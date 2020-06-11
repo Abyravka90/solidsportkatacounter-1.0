@@ -1,0 +1,4 @@
+1. buat fitur penyimpanan hasil penilaian
+2. tambahkan field kelas pada table point field ini berfungsi untuk melakukan diferensiasi pada data yang ditampilkan
+3. didalam menu tatami ada pilihan kelas yang dipertandingkan lalu kelas ini akan menjadi klausa WHERE pada proses pertandingan.
+ 
