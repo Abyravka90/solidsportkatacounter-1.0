@@ -89,6 +89,9 @@ $i = 1;
                                                 <input name="simpan" type="submit" class="btn btn-primary" value="proses penilaian">
                                             </td>
                                         </form>
+                                        <form action="proses_simpan_record_pertandingan.php" method="post">
+                                            <td><button type="submit" name="simpan" class="btn btn-success"><i class="fas fa-user-times"></i></button></td>
+                                        </form>
                                     </tr>
                             <?php
                                     $i++;

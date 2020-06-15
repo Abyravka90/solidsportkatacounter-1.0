@@ -31,7 +31,12 @@ if ($hitung_juri_menilai = $mysqli->query($sql_dihitung)){
     }
 }
 $total_nilai_semua = number_format($total_nilai_athletic + $total_nilai_technic, 2);
-if($total_juri_menilai==0){
+if($total_juri_menilai==7){
     $sql_record = "INSERT INTO tabel_record (id_atlet, nama_atlet, kontingen, grup, pertandingan_ke, nilai_keseluruhan) VALUES ('".$id_atlet."','".$nama_atlet."','".$kontingen."','".$grup."','".$pertandingan_ke."','".$total_nilai_semua."')";
-    echo $sql_record;
+    $result = $mysqli->query($sql_record);
+    if ($result){
+        echo "<script>alert('data poin berhasil direkam');window.location.href=('tampil_data_pertandingan_grup.php')</script>";
+    }else{echo 'failed';}
+}else{
+    echo "<script>alert('Masih ada Juri yang belum menilai');window.location.href=('tampil_data_pertandingan_grup.php')</script>";
 }//kalau semua juri sudah menilai maka masukan datanya
