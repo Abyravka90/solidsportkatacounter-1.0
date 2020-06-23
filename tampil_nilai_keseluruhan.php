@@ -16,15 +16,15 @@ if ($hasil = $mysqli->query($sql_athletic)) {
   $total_nilai_athletic = 0.3 * array_sum($subtotal_nilai_athletic);
 }
 
-$total_nilai_semua = round($total_nilai_athletic + $total_nilai_technic, 2);
+$total_nilai_semua = number_format($total_nilai_athletic + $total_nilai_technic, 2);
 mysqli_query($mysqli, 'UPDATE  tabel_keseluruhan SET nilai_keseluruhan = ' . $total_nilai_semua . ' WHERE id_keseluruhan = 1');
 $sql_keseluruhan = mysqli_query($mysqli, "SELECT `id_point`, `nilai_keseluruhan`,`atribut`,SUM(`dinilai`) as total  FROM `tabel_keseluruhan` INNER JOIN `point` LIMIT 1");
 $hasil3 = array();
 while ($row = mysqli_fetch_array($sql_keseluruhan)) {
   array_push($hasil3, array(
-    'nilai_keseluruhan' => $row[1], 'atribut' => $row[2], 'total' => $row[3],
-    'nilai_technic' => round($total_nilai_technic, 2), 'nilai_athletic' => round($total_nilai_athletic, 2),
-    'subtotal_nilai_technic' => round(array_sum($subtotal_nilai_technic), 2), 'subtotal_nilai_athletic' => round(array_sum($subtotal_nilai_athletic), 2)
+    'nilai_keseluruhan' => number_format($row[1],2), 'atribut' => $row[2], 'total' => $row[3],
+    'nilai_technic' => number_format($total_nilai_technic, 2), 'nilai_athletic' => number_format($total_nilai_athletic, 2),
+    'subtotal_nilai_technic' => number_format(array_sum($subtotal_nilai_technic), 2), 'subtotal_nilai_athletic' => number_format(array_sum($subtotal_nilai_athletic), 2)
   ));
 }
 echo json_encode(array('hasil3' => $hasil3));
