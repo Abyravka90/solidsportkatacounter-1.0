@@ -43,8 +43,13 @@ if($total_juri_menilai==7){
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div></div></div>';
     }else{echo 'failed';}
-}else{
-    echo '<div class="container card"><div class="card-body"><div class="alert alert-warning alert-dismissable fade show" role="alert"> Ada Juri Yang Belum Menilai
+}else if($total_juri_menilai==0){
+    echo '<div class="container card"><div class="card-body"><div class="alert alert-warning alert-dismissable fade show" role="alert"> Belum ada pertandingan yang aktif
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div></div></div>';
+}
+else{
+    echo '<div class="container card"><div class="card-body"><div class="alert alert-warning alert-dismissable fade show" role="alert"> Belum ada pertandingan yang aktif
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div></div></div>';
 }//kalau semua juri sudah menilai maka masukan datanya

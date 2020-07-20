@@ -26,6 +26,7 @@
       <a class="dropdown-item" href="tampil_data_atlet_grup.php">List Data Peserta</a>
       <a class="dropdown-item" href="tampil_data_rekap_point_wasit.php">List Data Point</a>
       <a class="dropdown-item" href="tampil_data_pertandingan_grup.php">Proses Pertandingan</a>
+      <a class="dropdown-item" href="tampil_data_pertandingan_record.php">Record Pertandingan</a>
     </div>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
