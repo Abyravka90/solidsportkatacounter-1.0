@@ -37,7 +37,7 @@ $i = 1;
                                     <th>Kontingen</th>
                                     <th>Group</th>
                                     <th>Urutan Pertandingan</th>
-                                    <th>Poin Rekap</th>
+                                    <th>Perolehan Poin</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,7 +89,7 @@ $i = 1;
                         <input name="simpan" class="btn btn-primary" type="submit" value="Update">
                         <?php
                         if (isset($_GET['grup'])) {
-                            $data_atlet = mysqli_query($mysqli, 'SELECT * FROM tabel_atlet  WHERE `tabel_atlet`.`grup`= "' . $_GET['grup'] . '"  ORDER BY `poin_rekap` DESC LIMIT 1 ');
+                            $data_atlet = mysqli_query($mysqli, 'SELECT * FROM tabel_atlet  WHERE `tabel_atlet`.`grup`= "' . $_GET['grup'] . '"  ORDER BY `nama_atlet` DESC LIMIT 1 ');
                             while ($result = mysqli_fetch_array($data_atlet)) {
                         ?>
 						<a href="tampil_cetak_data_point.php?id_jenis=1&&grup=<?= $result['grup'] ?>" value="Rekap Point" class="btn btn-success"><i class="fas fa-print"></i>&nbsp;Rekap Point</a>
@@ -140,7 +140,7 @@ $(document).ready(function(){
    else
    {
     $.ajax({
-     url:'hapus_data_atlet_grup.php',
+     url:'hapus_data_record.php',
      method:'POST',
      data:{id:id},
      success:function()
